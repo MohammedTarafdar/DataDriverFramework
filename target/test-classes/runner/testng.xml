@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Data driven">
+	<!-- 
+  <test name="CreateAccountTest">
+    <classes>
+      <class name="com.shift.testcases.CreateAccountTest"/>
+    </classes>
+    
+  </test> 
+   -->
+  <test name="SignIn and SignOut Test">
+    <classes>
+      <class name="com.shift.testcases.SignInAndSignOutTest"/>
+    </classes>
+    
+  </test> 
+</suite> 

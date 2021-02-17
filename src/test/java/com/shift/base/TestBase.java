@@ -1,21 +1,37 @@
 package com.shift.base;
 
+//import org.testng.annotations.AfterMethod;
+//import org.testng.annotations.BeforeMethod;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
+	
+	/* Need to do
+	 * 1. WebDriver => done
+	 * 2. Property file ==> done
+	 * 3. Logs - log4j dependency, .log file, log4j.properties
+	 * 4. DB
+	 * 5. Excel sheet
+	 * 6. Mail
+	 * 7. ReportNG, ExtentReport
+	 * 8. Jenkins
+	 * 
+	 */
 	
 	
 	public static WebDriver driver;
@@ -24,6 +40,7 @@ public class TestBase {
 	public static FileInputStream fis;
 	
 	
+	//@BeforeMethod
 	@BeforeSuite
 	public void setUp() {
 		
@@ -81,15 +98,22 @@ public class TestBase {
 		
 	}
 	
-	@Test
-	public void getPageTitle() {
-		String title = driver.getTitle();
-		System.out.println("Current page title : " + title);
+	public boolean isElementsPresent(By by) {
+		try {
+			driver.findElement(by);
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+		
 	}
 	
 	
+	//@AfterMethod
 	@AfterSuite
-	public void tearDown() {
+	public void tearDown() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.quit();
 		
 	}
 
