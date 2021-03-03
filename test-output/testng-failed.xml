@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Data driven]">
-  <test thread-count="5" name="SignIn and SignOut Test(failed)">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test thread-count="5" name="Create Account Test(failed)">
     <classes>
-      <class name="com.shift.testcases.SignInAndSignOutTest">
+      <class name="com.shift.testcases.CreateAccountTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="signInTest"/>
+          <include name="cliclOnSignInLinkTest"/>
+          <include name="sendingAcconutInfoTest"/>
+          <include name="clickOnCreateAccountLinkTest"/>
         </methods>
-      </class> <!-- com.shift.testcases.SignInAndSignOutTest -->
+      </class> <!-- com.shift.testcases.CreateAccountTest -->
     </classes>
-  </test> <!-- SignIn and SignOut Test(failed) -->
+  </test> <!-- Create Account Test(failed) -->
 </suite> <!-- Failed suite [Data driven] -->

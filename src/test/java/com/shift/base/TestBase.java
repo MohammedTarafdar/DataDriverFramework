@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -24,7 +25,7 @@ public class TestBase {
 	/* Need to do
 	 * 1. WebDriver => done
 	 * 2. Property file ==> done
-	 * 3. Logs - log4j dependency, .log file, log4j.properties
+	 * 3. Logs - log4j dependency, .log file, log4j.properties, Logger class
 	 * 4. DB
 	 * 5. Excel sheet
 	 * 6. Mail
@@ -38,6 +39,7 @@ public class TestBase {
 	public static Properties configProp = new Properties();
 	public static Properties orProp = new Properties();
 	public static FileInputStream fis;
+	public static Logger log = Logger.getLogger("TestLogger");
 	
 	
 	//@BeforeMethod
@@ -54,6 +56,7 @@ public class TestBase {
 			}
 			try {
 				configProp.load(fis);
+				log.debug("Config file loaded !!!");
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -68,6 +71,7 @@ public class TestBase {
 			}
 			try {
 				orProp.load(fis);
+				log.debug("Object Repository file loaded !!!");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -78,11 +82,12 @@ public class TestBase {
 		if (configProp.getProperty("browser").equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-			
+			log.debug("Chrome driver launched !!!");
 		}
 		else if(configProp.getProperty("browser").equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
+			log.debug("Firefox driver launched !!!");
 		}
 		
 		else {
@@ -95,7 +100,7 @@ public class TestBase {
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(configProp.getProperty("implicitWait")), TimeUnit.SECONDS);
 		
 		driver.get(configProp.getProperty("testsiteurl"));
-		
+		log.debug("Browse to "+configProp.getProperty("testsiteurl"));
 	}
 	
 	public boolean isElementsPresent(By by) {
@@ -113,7 +118,10 @@ public class TestBase {
 	@AfterSuite
 	public void tearDown() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.quit();
+		if (driver!=null) {
+			driver.quit();
+		}
+		log.debug("Test execution completed and browser terminated !!!");
 		
 	}
 

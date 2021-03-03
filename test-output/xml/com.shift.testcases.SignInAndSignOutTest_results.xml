@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SignIn and SignOut Test"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="7.677">
+  <properties />
+  
+  
+            <testcase name="signInTest" time="7.677" classname="com.shift.testcases.SignInAndSignOutTest" />
+      
+</testsuite>

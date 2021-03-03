@@ -1,0 +1,7 @@
+23:35:57,596 DEBUG TestLogger:59 - Config file loaded !!!
+23:35:57,598 DEBUG TestLogger:74 - Object Repository file loaded !!!
+23:35:59,273 DEBUG TestLogger:85 - Chrome driver launched !!!
+23:36:03,268 DEBUG TestLogger:103 - Browse to https://www.target.com/
+23:36:03,292 DEBUG TestLogger:12 - Signin Test with valid credentials!!!
+23:36:10,964 DEBUG TestLogger:22 - User successfully loged in  !!!
+23:36:14,088 DEBUG TestLogger:124 - Test execution completed and browser terminated !!!

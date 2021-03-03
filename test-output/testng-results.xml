@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5724" started-at="2021-02-16T22:04:20 EST" finished-at="2021-02-16T22:04:26 EST">
+  <suite name="Data driven" duration-ms="7699" started-at="2021-03-02T23:36:03 EST" finished-at="2021-03-02T23:36:10 EST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5724" started-at="2021-02-16T22:04:20 EST" finished-at="2021-02-16T22:04:26 EST">
+    <test name="SignIn and SignOut Test" duration-ms="7699" started-at="2021-03-02T23:36:03 EST" finished-at="2021-03-02T23:36:10 EST">
       <class name="com.shift.testcases.SignInAndSignOutTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.shift.testcases.SignInAndSignOutTest@78e67e0a]" name="setUp" is-config="true" duration-ms="5854" started-at="2021-02-16T22:04:14 EST" finished-at="2021-02-16T22:04:20 EST">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.shift.testcases.SignInAndSignOutTest@1ee807c6]" name="setUp" is-config="true" duration-ms="5681" started-at="2021-03-02T23:35:57 EST" finished-at="2021-03-02T23:36:03 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="signInTest()[pri:0, instance:com.shift.testcases.SignInAndSignOutTest@78e67e0a]" name="signInTest" duration-ms="5700" started-at="2021-02-16T22:04:20 EST" finished-at="2021-02-16T22:04:26 EST">
+        <test-method status="PASS" signature="signInTest()[pri:0, instance:com.shift.testcases.SignInAndSignOutTest@1ee807c6]" name="signInTest" duration-ms="7677" started-at="2021-03-02T23:36:03 EST" finished-at="2021-03-02T23:36:10 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signInTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.shift.testcases.SignInAndSignOutTest@78e67e0a]" name="tearDown" is-config="true" duration-ms="3112" started-at="2021-02-16T22:04:26 EST" finished-at="2021-02-16T22:04:29 EST">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.shift.testcases.SignInAndSignOutTest@1ee807c6]" name="tearDown" is-config="true" duration-ms="3111" started-at="2021-03-02T23:36:10 EST" finished-at="2021-03-02T23:36:14 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.shift.testcases.SignInAndSignOutTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- SignIn and SignOut Test -->
+  </suite> <!-- Data driven -->
 </testng-results>
